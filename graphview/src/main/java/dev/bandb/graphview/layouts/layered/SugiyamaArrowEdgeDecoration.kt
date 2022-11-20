@@ -65,7 +65,12 @@ class SugiyamaArrowEdgeDecoration @JvmOverloads constructor(private val linePain
                             destination
                     )
                 }
-                val triangleCentroid = drawTriangle(c, trianglePaint, clippedLine[0], clippedLine[1], clippedLine[2], clippedLine[3])
+                //val triangleCentroid = drawTriangle(c, trianglePaint, clippedLine[0], clippedLine[1], clippedLine[2], clippedLine[3])
+                val triangleCentroid= floatArrayOf(clippedLine[2], clippedLine[3])
+
+//                val x = (x2 + x3 + x4) / 3
+//                val y = (y2 + y3 + y4) / 3
+//                val triangleCentroid = floatArrayOf(x, y)
 
                 path.reset()
                 path.moveTo(bendPoints[0], bendPoints[1])
@@ -82,8 +87,8 @@ class SugiyamaArrowEdgeDecoration @JvmOverloads constructor(private val linePain
 
                 clippedLine = clipLine(startX, startY, stopX, stopY, destination)
 
-                val triangleCentroid = drawTriangle(c, trianglePaint, clippedLine[0], clippedLine[1], clippedLine[2], clippedLine[3])
-
+                //val triangleCentroid = drawTriangle(c, trianglePaint, clippedLine[0], clippedLine[1], clippedLine[2], clippedLine[3])
+                val triangleCentroid= floatArrayOf(clippedLine[2], clippedLine[3])
                 c.drawLine(clippedLine[0],
                         clippedLine[1],
                         triangleCentroid[0],
